@@ -1,0 +1,39 @@
+.pc-block .pc-image{
+    width: 100%;
+}
+
+.pc-block .medal img{
+    width: 70px;
+    margin: auto;
+    display: block;
+}
+
+.medal h3{
+    text-align: center;
+}
+
+.medal p{
+    text-align: center;
+}
+
+.pc-block .title{
+    text-align: center;
+}
+
+header{
+    text-align: center;
+}
+
+body{
+    background-color: black;
+    color: white;
+    background-image: url('https://drive.google.com/uc?export=view&id=1WaxAG1suHZ5IHeWlNXuxXrbH08CRGKXb');
+    background-repeat: repeat-y;
+    background-position: right;
+    background-size: 300px;
+}
+
+.row.first{
+    margin-top:50px;
+}
+
