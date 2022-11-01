@@ -38,8 +38,8 @@ h2, h3{
 
 
 hr{
-    margin: 30px 60px 30px 60px;
-
+    /*margin: 30px 60px 30px 60px;*/
+    margin: 20px;
     border-top: 2px solid;
 }
 
@@ -88,6 +88,7 @@ header{
 
 .story p{
     text-indent: 30px;
+    text-align: justify;
 }
 
 @media(max-width: 550px)
