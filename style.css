@@ -1,11 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,700&display=swap');
+
+body{
+    background-color: black;
+    color: white;
+    background-image: url('snake.jpg');
+    /*background-image: url('https://drive.google.com/uc?export=view&id=1WaxAG1suHZ5IHeWlNXuxXrbH08CRGKXb');*/
+
+    background-repeat: repeat-y;
+    background-position: right;
+    background-size: 300px;
+    font-family: 'Almendra', serif;
+}
+
+h1{
+    color: #ffbe00;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h2, h3{
+    font-weight: bold;
+}
+
+
 .pc-block .pc-image{
     width: 100%;
+    /*margin: 20px;*/
+    display: block;
 }
 
 .pc-block .medal img{
     width: 70px;
     margin: auto;
     display: block;
+}
+
+
+hr{
+    margin: 30px;
+
+    border-top: 2px solid;
 }
 
 .medal h3{
@@ -24,16 +58,25 @@ header{
     text-align: center;
 }
 
-body{
-    background-color: black;
-    color: white;
-    background-image: url('https://drive.google.com/uc?export=view&id=1WaxAG1suHZ5IHeWlNXuxXrbH08CRGKXb');
-    background-repeat: repeat-y;
-    background-position: right;
-    background-size: 300px;
+.mvp .pc-image{
+    filter: drop-shadow(0 0 0.75rem rgb(255, 190, 0));
+    /*box-shadow: 0px 0px 5px 5px #ffbe00;*/
+
+}
+
+.mvp .title .label {
+    margin-left: 20px;
+    font-style: italic;
+    color: #ffc107;
 }
 
 .row.first{
     margin-top:50px;
 }
 
+@media(max-width: 550px)
+{
+    body{
+        background-position: center; 
+    }
+}
