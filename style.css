@@ -83,7 +83,11 @@ header{
 }
 
 .row.first{
-    margin-top:50px;
+    margin-top:65px;
+}
+
+.mvp .row.first{
+    margin-top:100px;
 }
 
 .story p{
@@ -91,9 +95,22 @@ header{
     text-align: justify;
 }
 
+.story ul{
+    margin-left:40px;
+}
+
 @media(max-width: 550px)
+{
+}
+
+@media(max-width: 767px)
 {
     body{
         background-position: center; 
     }
+
+    .mvp .row.first{
+        margin-top:65px;
+    }
+
 }
