@@ -13,6 +13,7 @@ body{
 }
 
 h1{
+    margin-top:30px;
     color: #ffbe00;
     font-weight: bold;
     text-transform: uppercase;
@@ -24,8 +25,8 @@ h2, h3{
 
 
 .pc-block .pc-image{
-    width: 100%;
-    /*margin: 20px;*/
+    width: 90%;
+    margin: auto;
     display: block;
 }
 
@@ -37,7 +38,7 @@ h2, h3{
 
 
 hr{
-    margin: 30px;
+    margin: 30px 60px 30px 60px;
 
     border-top: 2px solid;
 }
@@ -52,26 +53,41 @@ hr{
 
 .pc-block .title{
     text-align: center;
+    margin-bottom: 30px;
 }
 
 header{
     text-align: center;
 }
 
-.mvp .pc-image{
-    filter: drop-shadow(0 0 0.75rem rgb(255, 190, 0));
-    /*box-shadow: 0px 0px 5px 5px #ffbe00;*/
+.mvp .title{
+    text-shadow: 0px 0px 10px #ffbe00;
 
 }
 
-.mvp .title .label {
-    margin-left: 20px;
+.mvp .pc-image{
+    filter: drop-shadow(0 0 0.75rem rgb(255, 190, 0));
+}
+
+.mvp .label {
     font-style: italic;
     color: #ffc107;
+    margin-top: -30px;
+    text-shadow: none;
+}
+
+.mvp .label img{
+    height:30px;
+    margin-right: 10px;
+    padding-bottom: 5px;
 }
 
 .row.first{
     margin-top:50px;
+}
+
+.story p{
+    text-indent: 30px;
 }
 
 @media(max-width: 550px)
