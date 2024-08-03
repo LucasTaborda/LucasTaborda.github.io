@@ -20,10 +20,14 @@ h1,h2,h3,h4,h5,h6{
 }
 
 h1{
-    font-size: 80px;
-    margin: 20px;
 }
 
+.highlighted-black{
+    background-color: black;
+}
+.highlighted-blue{
+    background-color: blue;
+}
 .parallax {
     /* La imagen de fondo */
     background-image: url('default.png');
@@ -34,8 +38,30 @@ h1{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .page-title{
     text-align: center;
+    align-self: center;
+    font-size: 120px;
+    margin: 20px;
+    color:white;
 }
+
+.slogan{
+    text-align: center;
+    align-self: center;
+    color:white;
+    font-size: 40px;
+}
+
+.radio-player{
+    display: flex;
+    justify-content: center;
+    padding:100px;
+}
+
+
