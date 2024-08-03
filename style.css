@@ -9,12 +9,6 @@ body{
     font-size: 30px;
 }
 
-header{
-}
-
-main{
-    min-height: 2000px;
-}
 
 h1,h2,h3,h4,h5,h6{
     text-transform: uppercase;
@@ -55,6 +49,7 @@ h1{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    border-bottom: 2px solid black;
 }
 
 .page-title{
@@ -79,6 +74,10 @@ h1{
     border-right: 2px dashed black;
 }
 
+.radio-player h1{
+    margin: 0 0 20px 0;
+}
+
 .first-section {
 	padding: 20px;
 	display: grid;
@@ -88,11 +87,53 @@ h1{
 	max-width: 980px;
 	margin: auto;
 	margin-top: 50px;
+    margin-bottom:5px;
 }
 
+iframe{
+    border: 2px solid black;
+}
+
+.chat-link{
+    max-width: 1024px;
+    margin: auto;
+}
+
+.chat-link h1{
+    margin-bottom:-10px;
+}
+
+.block-link{
+    background-color: blue;
+    text-align: center;
+    padding: 50px;
+    font-size: 50px;
+}
+
+.block-link a{
+    color: white;
+}
+
+.footer{
+    margin: 50px 0 0 0;
+    text-align: center;
+}
+
+.footer h1{
+    margin:0;
+    padding: 20px 0 50px 0; 
+}
+
+
 @media (max-width: 600px) {
-    .grid-container {
+    .first-section {
         grid-template-columns: 1fr;
+    }
+
+    .radio-player{
+        border-bottom: 2px dashed black;
+        border-right: 0;
+        padding-bottom: 50px;
     }
 }
 
