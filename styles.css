@@ -321,6 +321,10 @@ body::after {
 .tl-bullets li { position: relative; padding-left: 1.2rem; color: var(--fg); font-size: .92rem; max-width: 66ch; }
 .tl-bullets li::before { content: "▸"; position: absolute; left: 0; color: var(--magenta); }
 
+/* chips de stack en experiencia */
+.tl-chips { margin-top: .6rem; margin-bottom: 0; }
+.tl-chips li { border-color: var(--surface); color: var(--muted); }
+
 /* sdd */
 .sdd-intro p { max-width: 70ch; margin-bottom: 2.2rem; }
 
