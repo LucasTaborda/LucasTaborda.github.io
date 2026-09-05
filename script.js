@@ -121,56 +121,9 @@
   }
 
   /* ---------- portafolio (datos + render + filtros) ---------- */
-  const PROJECTS = [
-    {
-      title: "[nombre del proyecto web]",
-      desc: "[1 línea: qué hace y para quién. Ej.: plataforma corporativa en Drupal con integración de pagos.]",
-      tags: ["drupal", "php", "api"],
-      cat: "web",
-      img: "assets/projects/proyecto1.webp",
-      demo: "#", repo: "#", video: null
-    },
-    {
-      title: "[nombre del agente / herramienta IA]",
-      desc: "[1 línea: qué automatiza, con qué agentes, qué resultado medible.]",
-      tags: ["sdd", "agentes", "claude"],
-      cat: "ia",
-      img: "assets/projects/proyecto2.webp",
-      demo: "#", repo: "#", video: null
-    },
-    {
-      title: "[título del sitio WordPress]",
-      desc: "[1 línea: problema del cliente, tu solución, resultado.]",
-      tags: ["wordpress", "performance"],
-      cat: "web",
-      img: "assets/projects/proyecto3.webp",
-      demo: "#", repo: null, video: null
-    },
-    {
-      title: "[API en Laravel]",
-      desc: "[1 línea: qué expone, integraciones, volumen/uptime si aplica.]",
-      tags: ["laravel", "api-rest", "mysql"],
-      cat: "web",
-      img: "assets/projects/proyecto4.webp",
-      demo: null, repo: "#", video: null
-    },
-    {
-      title: "[título del juego de la gamejam]",
-      desc: "[1 línea: genre, temática y en cuántas horas se hizo. Link a itch.io en demo.]",
-      tags: ["unity", "c#", "gamejam"],
-      cat: "games",
-      img: "assets/projects/proyecto5.webp",
-      demo: "#", repo: "#", video: "#"
-    },
-    {
-      title: "[nombre del proyecto IA + web]",
-      desc: "[1 línea: pipeline agéntico aplicado a un caso real de producto web.]",
-      tags: ["ia", "laravel", "sdd"],
-      cat: "ia",
-      img: "assets/projects/proyecto6.webp",
-      demo: "#", repo: "#", video: null
-    }
-  ];
+  /* Datos en assets/projects/data.js (window.PROJECTS): fuente única compartida
+     entre la landing y las fichas de proyecto (project.html?p=slug). */
+  const PROJECTS = window.PROJECTS || [];
 
   let filter = "all";
 
@@ -196,10 +149,13 @@
         if (p.video) links.push('<a href="' + p.video + '" target="_blank" rel="noopener">[vídeo]</a>');
         if (!links.length) links.push('<span class="dim">[próximamente]</span>');
 
+        const slug = p.slug || p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+        const fichaUrl = "project.html?p=" + encodeURIComponent(slug);
+
         art.innerHTML =
           '<div class="proj-media">' + media + ph + "</div>" +
           '<div class="proj-body">' +
-            "<h3>" + p.title + "</h3>" +
+            '<h3><a href="' + fichaUrl + '">' + p.title + "</a></h3>" +
             "<p>" + p.desc + "</p>" +
             '<ul class="proj-tags">' + tags + "</ul>" +
             '<div class="proj-links">' + links.join("") + "</div>" +

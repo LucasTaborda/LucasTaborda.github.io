@@ -55,12 +55,17 @@ Web personal de una sola página, hecha a mano con HTML, CSS y JavaScript vanill
 ├── index.html
 ├── styles.css
 ├── script.js
+├── project.html         (plantilla de ficha de proyecto)
+├── project.css          (estilos extra de la ficha, complementa styles.css)
+├── project.js           (render de la ficha desde data.js vía ?p=slug)
 └── assets/
     ├── foto.webp          (retrato, ≥600px, ≤80KB)
     ├── cv.pdf
     ├── favicon.svg
     ├── og-image.png       (1200×630)
-    └── projects/          (gifs/capturas del portfolio)
+    └── projects/
+        ├── data.js        (fuente única de datos del portfolio)
+        └── proyectoN.webp (gifs/capturas del portfolio)
 ```
 
 ## 6. Dirección de arte
@@ -124,7 +129,7 @@ Nav sticky: logo `~/lucas` + links `#sobre-mi #skills #experiencia #sdd #portfol
 3. **Skills (02)** — 4 grupos en tarjetas: *Web* (Drupal, WordPress, Laravel, APIs REST, PHP…), *IA agéntica* (claude-code/cursor/copilot-style, SDD, prompts, orquestación de agentes), *Juegos* (Unity, C#, game design), *Herramientas* (Git, CI, testing…). Nivel con barra segmentada, no estrellas.
 4. **Experiencia (03)** — Timeline vertical: cada item = tarjeta con rol, empresa, periodo y 2–3 bullets de impacto (no tareas).
 5. **Cómo trabajo — SDD (04)** — ⭐ Sección diferenciadora hacia el target: pipeline visual `Spec → Plan → Agentes → Review → Ship` (CSS puro) + 3 bullets con prácticas reales (specs versionadas, agents con límites y validación, review humana). Enlaza a un ejemplo real (repo/PR/spec publicada).
-6. **Portfolio (05)** — Grid 3×2 (desktop) de cards: GIF, título, 1 línea, tags, links `[demo] [repo] [vídeo]`. Filtros: `todo / web / ia / juegos` (JS, sin recarga). Contenido en array `PROJECTS` de `script.js` → render dinámico (fuente única de datos, cero backend).
+6. **Portfolio (05)** — Grid 3×2 (desktop) de cards: GIF, título, 1 línea, tags, links `[demo] [repo] [vídeo]`. El título enlaza a la ficha del proyecto (`project.html?p=slug`). Filtros: `todo / web / ia / juegos` (JS, sin recarga). Contenido en `assets/projects/data.js` (`window.PROJECTS`) → render dinámico (fuente única de datos compartida con las fichas, cero backend).
 7. **Gamer mode (06)** — Franja de acento magenta: Unity, la gamejam, y qué aporta ese background al rol senior (rendimiento, prototipado rápido, pasión por construir).
 8. **Contacto (07)** — Botones grandes: `[email]` (mailto + copia al portapapeles con toast), `[GitHub]`, `[LinkedIn]`. Meta: "Respondo en <24h · CET". Opcional: `[calendly]`.
 9. **Footer** — `"Hecho a mano con HTML, CSS y JS. Sin frameworks, sin cookies."` · © 2026 · hint sutil del easter egg.
@@ -184,9 +189,30 @@ Opciones evaluadas para mostrar proyectos sin pagar servidores:
 **Decisión recomendada (coste anual total: 0€, salvo dominio opcional ~10€/año):**
 
 1. La web personal vive en **GitHub Pages** (`usuario.github.io` o dominio propio con HTTPS por CNAME).
-2. Cada proyecto destacado = **"case study estático"**: una mini-página propia (1 HTML) con reconstrucción esencial del proyecto — *no clonar webs enteras de clientes*. Menos mantenimiento, cero riesgo, misma demostración. Deploy en Pages: `usuario.github.io/nombre-proyecto`.
+2. Cada proyecto destacado = **"case study estático"**: una ficha propia con reconstrucción esencial del proyecto — *no clonar webs enteras de clientes*. Menos mantenimiento, cero riesgo, misma demostración. Deploy en Pages: `usuario.github.io/project.html?p=nombre-proyecto`.
+
+   ### Plantilla de ficha (project.html)
+
+   Una sola página plantilla + datos, **sin una página HTML por proyecto y sin base de datos**:
+
+   - `project.html` — esqueleto genérico de ficha (título, media, tags, links, meta, resumen, logros, reto/solución/resultado).
+   - `project.css` — estilos extra de la ficha; reutiliza los tokens y componentes de `styles.css` (mismo diseño neobrutalista retrowave).
+   - `project.js` — lee `?p=slug` de la querystring, busca el proyecto en `window.PROJECTS` y rellena el DOM (título del documento incluido; 404 elegante si el slug no existe).
+   - `assets/projects/data.js` — **fuente única de contenido**: cada proyecto es un objeto con campos de card (título, desc, tags, cat, img, demo/repo/vídeo) + campos de ficha (`meta.rol`, `meta.periodo`, `meta.stack`, `resumen`, `highlights[]`, `reto`, `solucion`, `resultado`). La landing renderiza las cards de ese mismo archivo.
+   - Alta de un proyecto nuevo = **añadir un objeto a `data.js`** (+ gif/captura en `assets/projects/`). Cero HTML nuevo, cero backend, cero base de datos: el "motor de datos" es el propio repo versionado en Git.
+   - Escalabilidad: si el array creciera mucho, se puede partir en `data-web.js`, `data-ia.js`… o migrar a JSON + `fetch()` (mismo patrón). Alternativas evaluadas y descartadas para v1: generador estático (11ty) — build obligatorio; CMS headless — dependencia externa gratuita con límites.
+
+### Alternativas de gestión de contenido (por qué data.js)
+
+| Opción | Pros | Contras | Veredicto |
+|---|---|---|---|
+| **`data.js` compartido (elegida)** | 0€, cero build, cero dependencias, versionable en Git, una sola fuente para cards y fichas | Editar = tocar código (ok para 1 dev, es parte del mensaje SDD de la web) | ✅ v1 |
+| JSON + `fetch()` | Datos/JS separados, mismo patrón | Requiere servir por HTTP (fetch falla en `file://`), un punto más de fallo | 🔄 migración natural si crece |
+| Generador estático (11ty/Astro) | Markdown por proyecto, URLs limpias | Build obligatorio, rompe el "hecho a mano, sin frameworks" | ❌ v1, candidato v2 |
+| CMS headless (Decap/Strapi free) | Edición por UI | Dependencia externa, límites free tier, complejidad | ❌ fuera de alcance |
+| Una HTML por proyecto | Simple de entender | Duplicación brutal de markup, N archivos que mantener | ❌ descartada |
 3. Juegos: binomio **itch.io** (build jugable) + vídeo de gameplay en **YouTube** embebido.
-4. El portfolio en la web se alimenta del array `PROJECTS` en `script.js`: título, GIF alojado en `assets/`, tags, y los 3 links (demo / repo / vídeo).
+4. El portfolio en la web se alimenta de `assets/projects/data.js` (`window.PROJECTS`): título, GIF alojado en `assets/projects/`, tags, los 3 links (demo / repo / vídeo) y el contenido de la ficha.
 5. Como el target es SDD: los enlaces a **repos ordenados** (README, specs y PRs legibles) valen tanto o más que las demos — mostrar el método es el portfolio.
 
 ## 9. Contacto sin backend
@@ -214,9 +240,7 @@ Opciones evaluadas para mostrar proyectos sin pagar servidores:
 
 | Métrica | Objetivo |
 |---|---|
-| HTML | < 25KB |
-| CSS | < 15KB |
-| JS | < 10KB (sin minificar) |
+| Archivo | HTML < 25KB · CSS < 15KB · JS < 10KB (sin minificar), por archivo |
 | Font woff2 (opcional) | ≤ 60KB, 2 pesos, `font-display: swap` |
 | Foto hero (WebP/AVIF) | ≤ 80KB, `loading="lazy"` para imágenes bajo el fold, siempre con `width/height` (CLS 0) |
 | Peso total inicial | < 300KB |
@@ -257,7 +281,7 @@ HTML semántico (header/main/section/footer, un solo h1) · skip-link · `:focus
 - [ ] CV actualizado en PDF
 - [ ] Email a mostrar, usuario de GitHub y URL de LinkedIn
 - [ ] Años de experiencia y stat de proyectos ("+[X] años · [n] proyectos shiped")
-- [ ] 4–6 proyectos de portfolio: nombre, descripción 1 línea, demo/repo/vídeo, GIF o captura
+- [ ] 4–6 proyectos de portfolio: nombre, descripción 1 línea, demo/repo/vídeo, GIF o captura + contenido de ficha (resumen, logros, reto, solución, resultado) en `assets/projects/data.js`
 - [ ] Empleos: empresa, rol real, periodo, 2–3 logros medibles por puesto
 - [ ] Nombre de la gamejam y de la entry (+ link a itch/vídeo si existe)
 - [ ] Dominio deseado (opcional)
@@ -271,11 +295,12 @@ HTML semántico (header/main/section/footer, un solo h1) · skip-link · `:focus
 
 ## 18. Fuera de alcance (candidatos a v2)
 
-Multiidioma completo · blog (estático, sin CMS) · versión light/dark (dark es identidad) · formulario propio · páginas de proyecto individuales con plantilla · PWA/offline.
+Multiidioma completo · blog (estático, sin CMS) · versión light/dark (dark es identidad) · formulario propio · ~~páginas de proyecto individuales con plantilla~~ (resuelto en v1 con `project.html` + `data.js`, ver §8) · URLs limpias por proyecto (`/proyecto/` requiere Jekyll Actions en Pages) · PWA/offline.
 
 ## 19. Criterios de aceptación (DoD)
 
-- [ ] Exactamente `index.html` + `styles.css` + `script.js` (+ assets), sin dependencias externas más allá de fuentes opcionales
+- [ ] Exactamente `index.html` + `project.html` + `styles.css` + `project.css` + `script.js` + `project.js` + `assets/projects/data.js` (+ assets), sin dependencias externas más allá de fuentes opcionales
+- [ ] Cada tarjeta del portfolio enlaza a su ficha (`project.html?p=slug`); la ficha renderiza el proyecto correcto y muestra 404 elegante con slug inválido
 - [ ] Lighthouse ≥ 95/95/100/100 (perf/a11y/BP/SEO) en mobile y desktop
 - [ ] Sin layout roto de 360px a 1920px; menú hamburguesa funcional en móvil
 - [ ] Todas las animaciones desactivadas con `prefers-reduced-motion`

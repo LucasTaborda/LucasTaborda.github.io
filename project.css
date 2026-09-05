@@ -1,0 +1,89 @@
+/* project.css — ficha de proyecto. Complementa styles.css (mismos tokens y componentes). */
+
+/* ---------- cabecera de ficha ---------- */
+#pHead { margin-bottom: 2rem; }
+
+.ficha { padding: 1.6rem; max-width: 880px; }
+
+/* ---------- media ---------- */
+.ficha-media {
+  aspect-ratio: 16 / 9;
+  background: var(--bg-alt);
+  border: 2px solid var(--border);
+  box-shadow: 6px 6px 0 #000;
+  margin-bottom: 1.4rem;
+  overflow: hidden;
+  position: relative;
+}
+.ficha-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ficha-media .ph {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  color: var(--muted); font-size: .85rem; text-align: center; padding: 1rem;
+}
+
+/* ---------- head: tags + links ---------- */
+.ficha-head {
+  display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+.ficha-head .proj-tags { margin-bottom: 0; }
+.ficha-links { display: flex; gap: .8rem; flex-wrap: wrap; }
+.ficha-links a {
+  color: var(--cyan); font-size: .85rem; text-decoration: none;
+  border: 2px solid var(--cyan); padding: .3rem .7rem;
+  transition: all .18s var(--ease);
+}
+.ficha-links a:hover { background: var(--cyan); color: #000; box-shadow: 3px 3px 0 #000; }
+
+/* ---------- resumen ---------- */
+.ficha-resumen {
+  color: var(--fg); font-size: 1.05rem; max-width: 72ch;
+  border-left: 4px solid var(--magenta);
+  padding-left: 1rem; margin-bottom: 1.8rem;
+}
+
+/* ---------- meta ---------- */
+.ficha-meta {
+  display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+.meta-item {
+  background: var(--bg-alt); border: 2px solid var(--surface);
+  padding: .8rem 1rem;
+}
+.meta-item dt {
+  color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em;
+  margin-bottom: .3rem;
+}
+.meta-item dd { font-size: .9rem; }
+.meta-item--stack dd ul { margin-bottom: 0; }
+.meta-item--stack .chips li { font-size: .68rem; }
+
+/* ---------- highlights ---------- */
+.ficha-highlights { margin-bottom: 1.8rem; }
+.ficha-highlights h3, .ficha-bloque h3 {
+  font-size: 1rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .9rem;
+}
+.ficha-highlights ul { list-style: none; }
+.ficha-highlights li {
+  position: relative; padding-left: 1.4rem; margin-bottom: .6rem; max-width: 70ch;
+}
+.ficha-highlights li::before { content: "★"; position: absolute; left: 0; color: var(--magenta); }
+
+/* ---------- bloques reto/solución/resultado ---------- */
+.ficha-secciones { display: grid; gap: 1.2rem; }
+.ficha-bloque {
+  background: var(--bg-alt);
+  border: 2px solid var(--surface);
+  border-left: 4px solid var(--cyan);
+  padding: 1.1rem 1.3rem;
+}
+.ficha-bloque h3 .prompt { margin-right: .5rem; color: var(--cyan); }
+.ficha-bloque p { max-width: 70ch; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 768px) {
+  .ficha { padding: 1.1rem; }
+  .ficha-meta { grid-template-columns: 1fr; }
+  .ficha-head { flex-direction: column; align-items: flex-start; }
+}
