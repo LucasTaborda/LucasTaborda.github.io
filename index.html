@@ -1,44 +1,266 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Arca Latina</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lucas Taborda — Senior AI-Driven Developer</title>
+  <meta name="description" content="Lucas Taborda — Desarrollador senior web (Drupal, WordPress, Laravel, APIs) y desarrollo con IA agéntica (SDD). + Videojuegos con Unity. Disponible para trabajar.">
+  <link rel="canonical" href="https://lucastaborda.dev/">
+  <meta name="theme-color" content="#0D0221">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lucas Taborda — Senior AI-Driven Developer">
+  <meta property="og:description" content="Web senior + IA agéntica (SDD) + videojuegos. Hecho a mano con HTML, CSS y JS.">
+  <meta property="og:url" content="https://lucastaborda.dev/">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230D0221'/%3E%3Crect x='4' y='4' width='56' height='56' rx='8' fill='none' stroke='%23FF2E97' stroke-width='4'/%3E%3Cpath d='M18 24l8 8-8 8' fill='none' stroke='%232DE2E6' stroke-width='5' stroke-linecap='square'/%3E%3Cpath d='M34 44h14' stroke='%23FF2E97' stroke-width='5' stroke-linecap='square'/%3E%3C/svg%3E">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lucas Taborda",
+    "jobTitle": "Senior AI-Driven Developer",
+    "url": "https://lucastaborda.dev/",
+    "sameAs": ["https://github.com/tu-usuario", "https://www.linkedin.com/in/tu-usuario"]
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-    </header>
-    <main>
-    <div class="parallax">
-        <h1 class="page-title"><span class="highlighted-black">Arca Latina</span></h1>
-        <h2 class="slogan"><span class="highlighted-blue">Donde la fiesta nunca termina</span></h2>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <div class="bg" aria-hidden="true">
+    <div class="bg-sun"></div>
+    <div class="bg-floor"></div>
+  </div>
+
+  <header class="nav">
+    <a class="logo" href="#top">~/lucas<span class="logo-caret" aria-hidden="true">_</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Principal">
+      <a href="#sobre-mi">sobre-mí</a>
+      <a href="#skills">skills</a>
+      <a href="#experiencia">experiencia</a>
+      <a href="#sdd">sdd</a>
+      <a href="#portfolio">portfolio</a>
+      <a href="#contacto">contacto</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="langBtn" class="lang" type="button" aria-label="Switch to English">EN</button>
+      <a class="btn btn--cv" href="assets/cv.pdf">[cv.pdf]</a>
+      <button id="menuBtn" class="burger" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <section class="first-section">
-        <div class="radio-player">
-            <h1>¡Dale a ese play!</h1>
-            <iframe src="https://zeno.fm/player/arca-latina-radio" width="350" height="300" frameborder="0" scrolling="no"></iframe>
-        </div>
-        <div>
-            <h1><span class="highlighted-black highlighted-big">Horarios de</span><span class="highlighted-blue highlighted-down">emisión</span></h1>
-            <p>Martes - Jueves - Viernes</p>
-            <p>08:00 pm / 12:00 am (hora Venezuela)</p>
-        </div>
-    </section>
-    <section class="chat-link">
-        <h1>Te invitamos a nuestra sala de chat</h1>
-        <div class="block-link">
-            <a href="https://www.latinchats.net/webchat/?channel=arcalatina" target="_blank">#Arcalatina</a>
-        </div>
-    </section>
-    <section class="footer">
-        <h1 class="highlighted-black">⚡ DJ Zeus005 ⚡</h1>
-    </section>
- 
+  </header>
 
-    </main>
-    <footer>
+  <main id="main">
 
-    </footer>
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="terminal">&nbsp;~/lucas $&nbsp;<span id="typing" data-text="whoami --senior --ai-driven"></span><span class="caret" aria-hidden="true"></span></p>
+        <h1 class="hero-name">LUCAS TABORDA</h1>
+        <p class="hero-role">&gt; Senior AI-Driven Developer</p>
+        <p class="hero-sub" data-en="Web senior · AI agentic dev (SDD) · video games — I ship solid, fast and maintainable products.">Web senior · IA agéntica (SDD) · videojuegos — envío producto sólido, rápido y mantenible.</p>
+        <ul class="hero-stack" aria-label="Stack">
+          <li>Drupal</li><li>WordPress</li><li>Laravel</li><li>APIs</li><li>IA agéntica</li><li>Unity</li>
+        </ul>
+        <div class="hero-cta">
+          <a class="btn btn--primary" href="#portfolio">[ ver portfolio ]</a>
+          <button class="btn btn--ghost" type="button" data-copy="hola@lucastaborda.dev">[ copiar email ]</button>
+        </div>
+        <p class="hero-open"><span class="dot" aria-hidden="true"></span><span data-en="open to work · replies &lt;24h">abierto a trabajar · respondo en menos de 24h</span></p>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/foto.webp" alt="Fotografía de Lucas Taborda" width="525" height="700" loading="eager" fetchpriority="high">
+        <span class="stk stk--cyan" aria-hidden="true">LV.99<br>SENIOR</span>
+        <span class="stk stk--mag" aria-hidden="true">+99<br>IA</span>
+        <figcaption class="visually-hidden">Lucas Taborda</figcaption>
+      </figure>
+      <p class="hero-hint" aria-hidden="true">▼ scroll</p>
+    </section>
+
+    <section class="section" id="sobre-mi">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <span class="prompt" aria-hidden="true">~/lucas $</span>
+          <h2>./01_sobre-mi</h2>
+        </header>
+        <div class="about-grid">
+          <div class="about-text" data-reveal>
+            <p data-en="I started in the trenches of the web: building and maintaining sites in Drupal, WordPress and Laravel, modeling APIs and taking care of what is live in production. That taught me something that no framework gives you: criterion.">Me formé en las trincheras de la web: desarrollando y manteniendo sitios en Drupal, WordPress y Laravel, modelando APIs y cuidando lo que vive en producción. Ahí aprendí algo que no enseña ningún framework: criterio.</p>
+            <p data-en="Today I work as a senior AI-driven developer: I run agentic workflows with the SDD methodology (Spec-Driven Development), turning specs into plans, plans into agents, and agents into shipped code — always with human review and tests.">Hoy trabajo como desarrollador senior AI-driven: orquesto flujos agénticos con la metodología SDD (Spec-Driven Development): convierto specs en planes, planes en agentes y agentes en código en producción, con revisión humana y tests.</p>
+            <p data-en="Bonus track: I studied video game development, worked as a Unity developer and jammed in gamejams. That trained my speed to prototype, my respect for performance and my love for building things.">Bonus: estudié desarrollo de videojuegos, trabajé como dev de Unity y participé en gamejams. Eso me dio velocidad para prototipar, respeto por el rendimiento y amor por construir.</p>
+          </div>
+          <dl class="stats" data-reveal>
+            <div class="stat"><dt data-en="years of experience">años de experiencia</dt><dd>8+</dd></div>
+            <div class="stat"><dt data-en="projects shipped">proyectos enviados</dt><dd>40+</dd></div>
+            <div class="stat"><dt>gamejams</dt><dd>1</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="skills">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <span class="prompt" aria-hidden="true">~/lucas $</span>
+          <h2>./02_skills</h2>
+        </header>
+        <div class="skills-grid">
+          <article class="card skill" data-reveal>
+            <h3><span class="sk-ico" aria-hidden="true">§</span>web</h3>
+            <ul class="chips"><li>PHP</li><li>Drupal</li><li>WordPress</li><li>Laravel</li><li>APIs REST</li><li>MySQL</li><li>HTML/CSS</li><li>JavaScript</li></ul>
+            <div class="bar" role="img" aria-label="Nivel web: 9 de 10"><span class="bar-fill" style="--l:90%"></span></div>
+          </article>
+          <article class="card skill" data-reveal>
+            <h3><span class="sk-ico" aria-hidden="true">◈</span>ia agéntica</h3>
+            <ul class="chips"><li>SDD</li><li>Claude Code</li><li>Copilot</li><li>Cursor</li><li>Orquestación de agentes</li><li>Prompt engineering</li><li>RAG</li></ul>
+            <div class="bar" role="img" aria-label="Nivel IA agéntica: 9 de 10"><span class="bar-fill bar-fill--mag" style="--l:90%"></span></div>
+          </article>
+          <article class="card skill" data-reveal>
+            <h3><span class="sk-ico" aria-hidden="true">▲</span>juegos</h3>
+            <ul class="chips"><li>Unity</li><li>C#</li><li>Game design</li><li>Gamejams</li><li>Prototipado</li></ul>
+            <div class="bar" role="img" aria-label="Nivel juegos: 7 de 10"><span class="bar-fill" style="--l:70%"></span></div>
+          </article>
+          <article class="card skill" data-reveal>
+            <h3><span class="sk-ico" aria-hidden="true">✚</span>herramientas</h3>
+            <ul class="chips"><li>Git</li><li>CI/CD</li><li>Docker</li><li>Testing</li><li>Linux</li><li>AWS básico</li></ul>
+            <div class="bar" role="img" aria-label="Nivel herramientas: 8 de 10"><span class="bar-fill" style="--l:80%"></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experiencia">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <span class="prompt" aria-hidden="true">~/lucas $</span>
+          <h2>./03_experiencia</h2>
+        </header>
+        <ol class="timeline">
+          <li class="tl-item" data-reveal>
+            <p class="tl-when">[año] — actualidad</p>
+            <h3 class="tl-role">AI-Driven Developer (Senior)</h3>
+            <p class="tl-where">[empresa / freelance]</p>
+            <ul class="tl-bullets">
+              <li data-en="Describe one measurable achievement: time saved with agentic pipelines, quality increased, etc.">Describe un logro medible: tiempo ahorrado con pipelines agénticos, calidad aumentada, etc.</li>
+              <li data-en="Second achievement: specs delivered, agents in production, tools built.">Segundo logro: specs entregadas, agentes en producción, herramientas construidas.</li>
+            </ul>
+          </li>
+          <li class="tl-item" data-reveal>
+            <p class="tl-when">[año] — [año]</p>
+            <h3 class="tl-role">Desarrollador Web Full-stack</h3>
+            <p class="tl-where">[empresa]</p>
+            <ul class="tl-bullets">
+              <li data-en="Development and maintenance of Drupal, WordPress and Laravel sites for real clients.">Desarrollo y mantenimiento de sitios en Drupal, WordPress y Laravel para clientes reales.</li>
+              <li data-en="REST APIs, integrations between systems and production support.">APIs REST, integraciones entre sistemas y soporte en producción.</li>
+            </ul>
+          </li>
+          <li class="tl-item" data-reveal>
+            <p class="tl-when">[año] — [año]</p>
+            <h3 class="tl-role">Desarrollador Unity</h3>
+            <p class="tl-where">[estudio]</p>
+            <ul class="tl-bullets">
+              <li data-en="Gameplay, UI and optimization in Unity/C#.">Gameplay, UI y optimización en Unity/C#.</li>
+              <li data-en="Participant in [gamejam name]: shipped a playable prototype in [48/72]h.">Participante de [nombre de la gamejam]: entregamos un prototipo jugable en [48/72]h.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="sdd">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <span class="prompt" aria-hidden="true">~/lucas $</span>
+          <h2>./04_como-trabajo</h2>
+        </header>
+        <div class="sdd-intro" data-reveal>
+          <p data-en="For me AI is not a button: it is a team. With SDD (Spec-Driven Development) I first write the spec, then the plan, and only then do agents write code — with validation and human review at every step. Fewer regressions, more speed, total traceability.">Para mí la IA no es un botón: es un equipo. Con SDD (Spec-Driven Development) escribo primero la spec, luego el plan y solo entonces los agentes escriben código, con validación y revisión humana en cada paso. Menos regresiones, más velocidad, trazabilidad total.</p>
+        </div>
+        <ol class="pipe" data-reveal>
+          <li class="step"><span class="step-n">01</span><span class="step-t" data-en="Spec">Spec</span><span class="step-d" data-en="the contract">el contrato</span></li>
+          <li class="step"><span class="step-n">02</span><span class="step-t" data-en="Plan">Plan</span><span class="step-d" data-en="tasks + criteria">tareas + criterios</span></li>
+          <li class="step"><span class="step-n">03</span><span class="step-t" data-en="Agents">Agentes</span><span class="step-d" data-en="parallel work">trabajo paralelo</span></li>
+          <li class="step"><span class="step-n">04</span><span class="step-t" data-en="Review">Review</span><span class="step-d" data-en="human + tests">humana + tests</span></li>
+          <li class="step"><span class="step-n">05</span><span class="step-t" data-en="Ship">Ship</span><span class="step-d" data-en="to production">a producción</span></li>
+        </ol>
+        <p class="sdd-link" data-reveal>
+          <a class="btn btn--ghost" href="https://github.com/" data-en="[ see a real example → ]">[ ver ejemplo real → ]</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <span class="prompt" aria-hidden="true">~/lucas $</span>
+          <h2>./05_portfolio</h2>
+        </header>
+        <div class="filters" role="group" aria-label="Filtrar proyectos" data-reveal>
+          <button class="fbtn" type="button" data-filter="all" aria-pressed="true">todo</button>
+          <button class="fbtn" type="button" data-filter="web" aria-pressed="false">web</button>
+          <button class="fbtn" type="button" data-filter="ia" aria-pressed="false">ia</button>
+          <button class="fbtn" type="button" data-filter="games" aria-pressed="false">juegos</button>
+        </div>
+        <noscript><p class="noscript-note">Activa JavaScript para ver el portfolio — o mira los proyectos directamente en GitHub.</p></noscript>
+        <div class="grid" id="grid" data-reveal></div>
+        <p class="grid-more" data-reveal><a href="https://github.com/">[ más proyectos en GitHub → ]</a></p>
+      </div>
+    </section>
+
+    <section class="section section--gamer" id="gamer">
+      <div class="wrap">
+        <header class="section-head section-head--mag" data-reveal>
+          <span class="prompt" aria-hidden="true">~/lucas $</span>
+          <h2>./06_gamer-mode</h2>
+        </header>
+        <div class="gamer-grid" data-reveal>
+          <p data-en="I didn't leave games behind: they made me a better developer. Prototyping under jam pressure, making every frame count and shipping despite bugs — that mindset also wins in production web and in AI pipelines.">No dejé los juegos atrás: me hicieron mejor desarrollador. Prototipar bajo presión de jam, exprimir cada frame y entregar a pesar de los bugs — esa mentalidad también gana en web de producción y en pipelines de IA.</p>
+          <ul class="chips chips--big">
+            <li>▲ Unity</li><li>■ C#</li><li>★ gamejam: [nombre]</li><li>▶ [título de tu juego]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <span class="prompt" aria-hidden="true">~/lucas $</span>
+          <h2>./07_contacto</h2>
+        </header>
+        <div class="contact-grid" data-reveal>
+          <a class="card contact" id="emailBtn" href="mailto:hola@lucastaborda.dev">
+            <span class="c-ico" aria-hidden="true">✉</span>
+            <span class="c-txt"><strong>email</strong><span>hola@lucastaborda.dev</span></span>
+          </a>
+          <button class="card contact" type="button" data-copy="hola@lucastaborda.dev">
+            <span class="c-ico" aria-hidden="true">⧉</span>
+            <span class="c-txt"><strong data-en="copy email">copiar email</strong><span data-en="one click and we talk">un click y hablamos</span></span>
+          </button>
+          <a class="card contact" href="https://github.com/tu-usuario" target="_blank" rel="noopener">
+            <span class="c-ico" aria-hidden="true">⌥</span>
+            <span class="c-txt"><strong>GitHub</strong><span>@tu-usuario</span></span>
+          </a>
+          <a class="card contact" href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener">
+            <span class="c-ico" aria-hidden="true">in</span>
+            <span class="c-txt"><strong>LinkedIn</strong><span>/in/tu-usuario</span></span>
+          </a>
+        </div>
+        <p class="contact-meta" data-reveal data-en="I usually reply in less than 24h · CET/CEST · open to remote and hybrid">Suelo responder en menos de 24h · CET/CEST · abierto a remoto e híbrido</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p><span class="prompt" aria-hidden="true">~/lucas $</span> <span data-en="handmade with HTML, CSS and JS. No frameworks, no cookies, no trackers.">hecho a mano con HTML, CSS y JS. Sin frameworks, sin cookies, sin trackers.</span></p>
+    <p>© <span id="year">2026</span> Lucas Taborda</p>
+    <p class="konami-hint" aria-hidden="true">▲▲▼▼◀▶◀▶BA</p>
+  </footer>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js" defer></script>
 </body>
 </html>
