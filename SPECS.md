@@ -130,9 +130,10 @@ Nav sticky: logo `~/lucas` + links `#sobre-mi #skills #experiencia #sdd #portfol
 4. **Experiencia (03)** — Timeline vertical: cada item = tarjeta con rol, empresa, periodo y 2–3 bullets de impacto (no tareas).
 5. **Cómo trabajo — SDD (04)** — ⭐ Sección diferenciadora hacia el target: pipeline visual `Spec → Plan → Agentes → Review → Ship` (CSS puro) + 3 bullets con prácticas reales (specs versionadas, agents con límites y validación, review humana). Enlaza a un ejemplo real (repo/PR/spec publicada).
 6. **Portfolio (05)** — Grid 3×2 (desktop) de cards: GIF, título, 1 línea, tags, links `[demo] [repo] [vídeo]`. El título enlaza a la ficha del proyecto (`project.html?p=slug`). Filtros: `todo / web / ia / juegos` (JS, sin recarga). Contenido en `assets/projects/data.js` (`window.PROJECTS`) → render dinámico (fuente única de datos compartida con las fichas, cero backend).
-7. **Gamer mode (06)** — Franja de acento magenta: Unity, la gamejam, y qué aporta ese background al rol senior (rendimiento, prototipado rápido, pasión por construir).
-8. **Contacto (07)** — Botones grandes: `[email]` (mailto + copia al portapapeles con toast), `[GitHub]`, `[LinkedIn]`. Meta: "Respondo en <24h · CET". Opcional: `[calendly]`.
-9. **Footer** — `"Hecho a mano con HTML, CSS y JS. Sin frameworks, sin cookies."` · © 2026 · hint sutil del easter egg.
+7. **Contacto (06)** — Botones grandes: `[email]` (mailto + copia al portapapeles con toast), `[WhatsApp]`, `[GitHub]`, `[LinkedIn]`. Meta: "Respondo en <24h · CET". Opcional: `[calendly]`.
+8. **Footer** — `"Hecho a mano con HTML, CSS y JS. Sin frameworks, sin cookies."` · © 2026 · hint sutil del easter egg.
+
+> Nota v1.1: la sección "Gamer mode" se eliminó del one-page; el background gamer queda cubierto por el hero, la card de juegos en skills y el proyecto The Last Masterpiece en el portfolio.
 
 ### Wireframe desktop
 
@@ -198,7 +199,7 @@ Opciones evaluadas para mostrar proyectos sin pagar servidores:
    - `project.html` — esqueleto genérico de ficha (título, media, tags, links, meta, resumen, logros, reto/solución/resultado).
    - `project.css` — estilos extra de la ficha; reutiliza los tokens y componentes de `styles.css` (mismo diseño neobrutalista retrowave).
    - `project.js` — lee `?p=slug` de la querystring, busca el proyecto en `window.PROJECTS` y rellena el DOM (título del documento incluido; 404 elegante si el slug no existe).
-   - `assets/projects/data.js` — **fuente única de contenido**: cada proyecto es un objeto con campos de card (título, desc, tags, cat, img, demo/repo/vídeo) + campos de ficha (`meta.rol`, `meta.periodo`, `meta.stack`, `resumen`, `highlights[]`, `reto`, `solucion`, `resultado`). La landing renderiza las cards de ese mismo archivo.
+   - `assets/projects/data.js` — **fuente única de contenido**: cada proyecto es un objeto con campos de card (título, desc, tags, cat, img, demo/repo/vídeo) + campos de ficha (`meta.rol`, `meta.periodo`, `meta.stack`, `resumen`, `highlights[]`, `reto`, `solucion`). La landing renderiza las cards de ese mismo archivo.
    - Alta de un proyecto nuevo = **añadir un objeto a `data.js`** (+ gif/captura en `assets/projects/`). Cero HTML nuevo, cero backend, cero base de datos: el "motor de datos" es el propio repo versionado en Git.
    - Escalabilidad: si el array creciera mucho, se puede partir en `data-web.js`, `data-ia.js`… o migrar a JSON + `fetch()` (mismo patrón). Alternativas evaluadas y descartadas para v1: generador estático (11ty) — build obligatorio; CMS headless — dependencia externa gratuita con límites.
 
@@ -279,7 +280,7 @@ HTML semántico (header/main/section/footer, un solo h1) · skip-link · `:focus
 
 - [ ] Foto de retrato (buena luz, fondo neutro, ≥600px)
 - [ ] CV actualizado en PDF
-- [ ] Email a mostrar, usuario de GitHub y URL de LinkedIn
+- [x] Email a mostrar (lucas.taborda94@gmail.com), WhatsApp (wa.me/5491137915000), usuario de GitHub (LucasTaborda) y URL de LinkedIn (/in/lucas-taborda-juny)
 - [ ] Años de experiencia y stat de proyectos ("+[X] años · [n] proyectos shiped")
 - [ ] 4–6 proyectos de portfolio: nombre, descripción 1 línea, demo/repo/vídeo, GIF o captura + contenido de ficha (resumen, logros, reto, solución, resultado) en `assets/projects/data.js`
 - [ ] Empleos: empresa, rol real, periodo, 2–3 logros medibles por puesto

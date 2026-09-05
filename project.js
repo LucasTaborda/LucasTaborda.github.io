@@ -37,14 +37,15 @@
   title.textContent = "./" + project.slug;
   ficha.hidden = false;
 
-  /* media */
+  /* media — usa img_ficha (grande, nítida) si existe; fallback a img */
   const media = document.getElementById("pMedia");
-  if (project.img) {
+  const fichaImg = project.img_ficha || project.img;
+  if (fichaImg) {
     const img = document.createElement("img");
-    img.src = project.img;
+    img.src = fichaImg;
     img.alt = "Captura de " + project.title;
-    img.width = 640; img.height = 360;
-    img.loading = "lazy";
+    img.width = 1280; img.height = 720;
+    img.loading = "eager";
     img.onerror = function () { img.remove(); };
     media.appendChild(img);
   } else {
@@ -78,7 +79,6 @@
 
   document.getElementById("pReto").textContent = project.reto || "—";
   document.getElementById("pSolucion").textContent = project.solucion || "—";
-  document.getElementById("pResultado").textContent = project.resultado || "—";
 
   /* año footer */
   document.getElementById("year").textContent = String(new Date().getFullYear());

@@ -139,8 +139,7 @@
 
         const media = p.img
           ? '<img src="' + p.img + '" alt="Captura de ' + p.title + '" loading="lazy" width="640" height="400" onerror="this.remove()">'
-          : "";
-        const ph = '<span class="ph">▶ [gif del proyecto pendiente]</span>';
+          : '<span class="ph">▶ [gif del proyecto pendiente]</span>';
         const tags = p.tags.map((t) => "<li>" + t + "</li>").join("");
 
         const links = [];
@@ -153,7 +152,7 @@
         const fichaUrl = "project.html?p=" + encodeURIComponent(slug);
 
         art.innerHTML =
-          '<div class="proj-media">' + media + ph + "</div>" +
+          '<div class="proj-media">' + media + "</div>" +
           '<div class="proj-body">' +
             '<h3><a href="' + fichaUrl + '">' + p.title + "</a></h3>" +
             "<p>" + p.desc + "</p>" +
